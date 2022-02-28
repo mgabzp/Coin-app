@@ -1,7 +1,8 @@
 body {
-  background: linear-gradient(to right top, #1aa0ac, #0096b5, #008bbb, #007ebd, #3e6fb8) repeat
-  scroll 0% 0% !important;
+  /* background: linear-gradient(to right top, #1aa0ac, #0096b5, #008bbb, #007ebd, #3e6fb8) repeat
+  scroll 0% 0% !important; */
   height: 100vh;
+  background: #ffc107 repeat scroll 0% 0% !important;
 }
 .img-logo {
   width: 30px;

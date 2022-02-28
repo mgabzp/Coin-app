@@ -38,7 +38,7 @@ const CoinTable = ({ coins }) => {
               <td>{numeral(coin.volumeUsd24Hr).format("($ 0.00 a)")}</td>
               <td
                 className={
-                  coin.changePercent24Hr > 0 ? "text-success" : "text-danger"
+                  coin.changePercent24Hr > 0 ? "text-success fw-bold" : "text-danger fw-bold"
                 }
               >
                 {parseFloat(coin.changePercent24Hr).toFixed(2)}%
