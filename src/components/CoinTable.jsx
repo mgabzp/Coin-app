@@ -1,13 +1,14 @@
 import React from "react";
 import numeral from "numeral";
 import CoinIcon from "./CoinIcon";
+import { Table } from "react-bootstrap";
 
 //Numeral es una libreria para formato de numeros.
 
 const CoinTable = ({ coins }) => {
   return (
-    <div className="table-coin table-responsive">
-      <table className="table">
+    // <div className="table-coin table-responsive">
+      <Table striped bordered hover variant="dark" responsive>
         <thead className="thead-dark">
           <tr>
             <th scope="col">#Rank</th>
@@ -45,8 +46,8 @@ const CoinTable = ({ coins }) => {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    // </div>
   );
 };
 

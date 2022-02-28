@@ -6,6 +6,10 @@ import { getCoins, searchCoins } from "../helpers/coinsFetch";
 import CoinNavbar from "./CoinNavbar";
 import CoinSearch from "./CoinSearch";
 import CoinTable from "./CoinTable";
+
+import Spinner from 'react-bootstrap/Spinner'
+
+
 function Home() {
   //Estado de criptomonedas
   const [coins, setCoins] = useState({
@@ -48,7 +52,7 @@ function Home() {
         <div className="row">
           <div className="col ">
             {coins.loading ? (
-              <h3 className="text-white ">Cargando...</h3>
+              <Spinner animation="grow" />
             ) : (
               <CoinTable coins={coins} />
               // <ul>

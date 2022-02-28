@@ -1,20 +1,21 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import logo from '../assets/cripto-logo.png'
 
 const CoinNavbar = ({coins,setCoins}) => {
 
-  const updateCoins=()=>{
+  const history = useHistory();
+  const handleLoading = () => {
     setCoins({
       ...coins,
-      update: false
-
+      update: true,
     });
   };
   
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <div>
             <img className="img-logo" src={logo} alt="Logo" />
@@ -22,17 +23,21 @@ const CoinNavbar = ({coins,setCoins}) => {
           </div>
 
           <button
-            className="btn btn-coin" onClick={updateCoins}
-            
+            className="btn btn-outline-warning btn-nav fw-bold"
+            disabled={coins.update}
+            onClick={handleLoading}
           >
-            Actualizar
+            Update
           </button>
         </div>
         <button
-          className="btn"
-         
+          className="btn btn-warning me-5 btn-nav fw-bold"
+          onClick={() => {
+            localStorage.removeItem("crypto_app_user");
+            history.push("/login");
+          }}
         >
-          Salir
+          Logout
         </button>
       </nav>
     </div>

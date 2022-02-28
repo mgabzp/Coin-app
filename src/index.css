@@ -1,28 +1,19 @@
 body {
-  background: rgb(255, 255, 255)
-    linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246)) repeat
-    scroll 0% 0% !important;
+  background: linear-gradient(to right top, #1aa0ac, #0096b5, #008bbb, #007ebd, #3e6fb8) repeat
+  scroll 0% 0% !important;
+  height: 100vh;
 }
 .img-logo {
   width: 30px;
   margin-right: 10px;
 }
 
-.btn-coin {
-  border-radius: 10em !important;
-  background: rgb(24, 198, 131) none repeat scroll 0% 0% !important;
+.btn-nav {
   transition: transform 0.2s ease 0s;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 15px -3px;
-  color: #fff !important;
-  text-shadow: none;
-  padding: 5px 20px !important;
-  font-weight: bold !important;
 }
 
-.btn-coin:hover {
-  transform: translateY(-2px);
-  color: #fff;
-  text-shadow: none;
+.btn-nav:hover {
+  transform: translateY(-1.5px);
 }
 
 .table-coin {
@@ -62,13 +53,13 @@ body {
 .btnLogin {
   border-radius: 3px !important;
   padding: 10px !important;
-  border: 2px solid #146d6c !important;
+  border: 2px solid #ffc107 !important;
   background-color: transparent !important;
-  color: #146d6c !important;
+  color: #262626 !important;
 }
 .btnLogin:hover {
-  background-color: #146d6c !important;
-  color: #fff !important;
+  background-color: #ffc107 !important;
+  color: #262626 !important;
 }
 
 .bg-img {

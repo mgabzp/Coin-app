@@ -1,10 +1,6 @@
 import React from "react";
 
-const CoinSearch = ({inputValue, setInputValue}) => {
-
-  const inputChange= (e)=>{
-setInputValue(e.target.value)
-  }
+const CoinSearch = ({formValue, handleChange}) => {
 
   return (
     <div className="row mb-5">
@@ -13,10 +9,10 @@ setInputValue(e.target.value)
           <div className="form-group">
             <input
               type="text"
-              placeholder="Buscar cripto..."
+              placeholder="Search Crypto..."
               className="form-control"
-              value={inputValue}
-              onChange={inputChange}
+              value={formValue}
+              onChange={handleChange}
              
             />
           </div>

@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {Col, Container, Form, Row, Button} from "react-bootstrap";
 
 
 export default function Login() {
+  const history = useHistory();
+
+  const [inputLogin, setInputLogin] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    setInputLogin({
+      ...inputLogin,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
-} return (
+    if (inputLogin.email === " ") {
+      alert("falta email");
+      return;
+    }
+    if (inputLogin.password === " ") {
+      alert("falta contraseña");
+      return;
+    }
+    localStorage.setItem("crypto_app_user", JSON.stringify(inputLogin));
+    history.push("/");
+  } return (
     <Container>
       <Row className="justify-content-center align-items-center min-vh-100">
         <Col xs={10}>
@@ -19,14 +44,14 @@ export default function Login() {
                   <div className="p-5">
                     <div className="text-center">
                       <h4 className="mb-4">
-                        Bienvenido a <b>CryptoApp</b>
+                        Welcome to <b>CryptoApp</b>
                       </h4>
                     </div>
                     <div>
-                      <Form className="h-100" onSubmit={""}>
+                      <Form className="h-100" onSubmit={handleSubmit}>
                         <Form.Group className="mt-2" controlId="LoginEmail">
                           <Form.Control
-                            onChange={""}
+                            onChange={handleChange}
                             type="email"
                             placeholder="Example@gmail.com"
                             name="email"
@@ -36,7 +61,7 @@ export default function Login() {
                         </Form.Group>
                         <Form.Group className="my-3" controlId="LoginPassword">
                           <Form.Control
-                            onChange={""}
+                            onChange={handleChange}
                             type="password"
                             placeholder="Password"
                             minLength="6"
@@ -47,19 +72,18 @@ export default function Login() {
                         </Form.Group>
                         <Form.Group className="d-flex justify-content-center">
                           <Button
-                            className="mt-1 col-9 btnLogin "
+                            className="mt-1 col-9 btnLogin fw-bold"
                             type="submit"
                           >
-                            Ingresar
+                            Sign In
                           </Button>
                         </Form.Group>
-​
                         <button
                           className="mt-5 btn"
                           type="button"
                           onClick={() => console.log("")}
                         >
-                          olvidaste tu contraseña?
+                          forgot your password?
                         </button>
                       </Form>
                     </div>
