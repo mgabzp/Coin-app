@@ -47,12 +47,14 @@ function Home() {
   return (
     <div>
       <CoinNavbar coins={coins} setCoins={setCoins} />
-      <div className="container mt-3">
+      <div className="container mt-4">
         <CoinSearch handleChange={handleChange} formValue={formValue} />
         <div className="row">
-          <div className="col ">
+          <div className="col">
             {coins.loading ? (
-              <Spinner animation="grow" />
+          <div className="spinner d-flex justify-content-center">
+              <Spinner animation="grow"/>
+            </div>
             ) : (
               <CoinTable coins={coins} />
               // <ul>

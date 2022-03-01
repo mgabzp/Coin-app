@@ -1,10 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-import logo from '../assets/cripto-logo.png'
+import logo from "../assets/cripto-logo.png";
 
-const CoinNavbar = ({coins,setCoins}) => {
-
+const CoinNavbar = ({ coins, setCoins }) => {
   const history = useHistory();
   const handleLoading = () => {
     setCoins({
@@ -12,33 +11,53 @@ const CoinNavbar = ({coins,setCoins}) => {
       update: true,
     });
   };
-  
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <div>
+          <Link to="/Home" className="navbar-brand">
             <img className="img-logo" src={logo} alt="Logo" />
             <span className="navbar-brand">CryptoApp</span>
-          </div>
-
+          </Link>
           <button
-            className="btn btn-outline-warning btn-nav fw-bold"
-            disabled={coins.update}
-            onClick={handleLoading}
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            Update
+            <span className="navbar-toggler-icon"></span>
           </button>
+
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-lg-0">
+              <li className="nav-item ms-lg-3 my-2">
+                <button
+                  className="btn btn-outline-warning btn-nav fw-bold"
+                  disabled={coins.update}
+                  onClick={handleLoading}
+                >
+                  Update
+                </button>
+              </li>
+
+              <li className="nav-item ms-lg-5 my-2">
+                <button
+                  className="btn btn-warning me-5 btn-nav fw-bold"
+                  onClick={() => {
+                    localStorage.removeItem("crypto_app_user");
+                    history.push("/login");
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-        <button
-          className="btn btn-warning me-5 btn-nav fw-bold"
-          onClick={() => {
-            localStorage.removeItem("crypto_app_user");
-            history.push("/login");
-          }}
-        >
-          Logout
-        </button>
       </nav>
     </div>
   );
