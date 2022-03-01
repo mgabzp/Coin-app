@@ -45,7 +45,7 @@ function Home() {
     setFormValue(target.value);
   };
   return (
-    <div>
+    <div className="bg-color">
       <CoinNavbar coins={coins} setCoins={setCoins} />
       <div className="container mt-4">
         <CoinSearch handleChange={handleChange} formValue={formValue} />
