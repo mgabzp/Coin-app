@@ -31,6 +31,7 @@ export default function Login() {
     localStorage.setItem("crypto_app_user", JSON.stringify(inputLogin));
     history.push("/");
   } return (
+    <div className="bg-color">
     <Container>
       <Row className="justify-content-center align-items-center min-vh-100">
         <Col xs={10}>
@@ -96,5 +97,6 @@ export default function Login() {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }

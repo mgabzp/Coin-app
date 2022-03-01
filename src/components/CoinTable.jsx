@@ -8,7 +8,7 @@ import { Table } from "react-bootstrap";
 const CoinTable = ({ coins }) => {
   return (
     // <div className="table-coin table-responsive">
-      <Table striped bordered hover variant="dark" responsive className="mt-auto mb-5">
+      <Table striped bordered hover variant="dark" responsive className="mt-auto mb-2">
         <thead className="thead-dark">
           <tr>
             <th scope="col">#Rank</th>

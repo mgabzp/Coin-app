@@ -1,4 +1,4 @@
-const limite = 8;
+const limite = 10;
 
 export const getCoins = async () => {
   const resp = await fetch(`https://api.coincap.io/v2/assets?limit=${limite}`);
