@@ -1,8 +1,8 @@
 body{
   /* background: linear-gradient(to right top, #1aa0ac, #0096b5, #008bbb, #007ebd, #3e6fb8) repeat
   scroll 0% 0% !important; */
-  background: linear-gradient(to right top, #006571, #13728e, #3b7da9, #6786bf, #968dcd) repeat-y;
   height: 100vh;
+  background: linear-gradient(to right top, #006571, #13728e, #3b7da9, #6786bf, #968dcd) repeat-y;
 }
 
 .img-logo {
